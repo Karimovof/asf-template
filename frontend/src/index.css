@@ -1,0 +1,206 @@
+/* Общий анализ стилей */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  background-color: #F5F5DC;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.fact {
+  max-width: 600px;
+  text-align: justify;
+  line-height: 1.8;
+  font-size: 1.2em;
+  hyphens: auto;
+  word-wrap: break-word;
+  user-select: none;
+  caret-color: transparent;
+  cursor: none;
+  margin-top: 30px;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+.button-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+.hint-button {
+  flex: 0 1 auto;
+  padding: 12px 24px;
+  min-width: 150px;
+  max-width: 200px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background-color: rgba(249, 249, 249, 0.9);
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: fadeInButton 0.3s ease forwards;
+  z-index: 2;
+}
+
+.hint-button:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gradient {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.gradient-button-left {
+  left: 0px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.gradient-button-right {
+  right: 0px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.gradient-button-left:hover,
+.gradient-button-right:hover {
+  opacity: 1;
+}
+
+.gradient-button-left:active,
+.gradient-button-right:active {
+  opacity: 1; /* Полная видимость при активном состоянии */
+}
+
+@media (max-width: 768px) {
+  .fact {
+      font-size: 1em;
+      margin-bottom: 30px;
+      padding: 0 15px;
+  }
+
+  .hint-button {
+      padding: 12px 20px;
+      font-size: 14px;
+      min-width: 180px;
+  }
+}
+
+@keyframes fadeInButton {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.hint {
+  display: inline-block; /* или уберите правило display: none */
+}
+
+.error-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  background-color: #ff4444;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transform: translateX(120%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.error-message.show {
+  transform: translateX(0);
+}
+
+.loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.loading-indicator.visible {
+  display: flex;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ffffff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
