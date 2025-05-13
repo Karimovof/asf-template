@@ -2,7 +2,7 @@
 EN This template was developed by me using ChatGPT. You can look how it works on www.antismokefacts.com
 You can use it for building your own website with any topics
 
-RU Этот шаблон я разработал на основе ChatGPT. Вы можете посмотреть как он работает на www.antismokefacts.com
+RU Этот шаблон я разработал используя ChatGPT. Вы можете посмотреть как он работает на www.antismokefacts.com
 Вы можете использовать его для создания вашего сайта на любую тематику.
 
 Как запустить локально
